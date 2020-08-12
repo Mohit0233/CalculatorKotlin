@@ -1,6 +1,20 @@
 # CalculatorKotlin
 Making a calculator app using kotlin in android studio
 
+
+## Look
+| Light Mode | Dark Mode |
+| :--------: | :-------: |
+| <img src="https://github.com/Mohit0233/CalculatorKotlin/blob/master/Images%20for%20README.md/Light_Mode_Output.jpg" width="200"> | <img src="https://github.com/Mohit0233/CalculatorKotlin/blob/master/Images%20for%20README.md/Dark_Mode_Output.jpg" width="200"> |
+
+
+## ToDo
+- [x] Resolved all calculation errors which can occur
+- [ ] Advanced Operators
+- [ ] History Tab
+- [ ] Floating Window
+
+
 ## Setup App Development Environment
 
 - Download and install [Android Studio](https://developer.android.com/studio)
