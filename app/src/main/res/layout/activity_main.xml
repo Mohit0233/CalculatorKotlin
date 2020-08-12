@@ -1,18 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/tvExpression"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:ellipsize="start"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="end"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="64sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="start"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="end"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/history"
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_history_24"
+            android:tooltipText="History" />
+
+        <ImageButton
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/not_working_button"
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_outline_branding_watermark_24"
+            android:tooltipText="Not Working for future" />
+
+        <ImageButton
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="@string/info"
+            android:padding="18dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_outline_info_24"
+
+            android:tooltipText="INFO: % -> Percentage but Modulus" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btClear"
+                style="@style/CommonButtonStyle"
+                android:text="@string/clear"
+                android:tooltipText="Clear" />
+
+            <Button
+                android:id="@+id/btPercent"
+                style="@style/CommonButtonStyle"
+                android:text="@string/modulus"
+                android:tooltipText="Modulus" />
+
+            <ImageButton
+                android:id="@+id/btBackspace"
+                style="@style/CommonButtonStyle"
+                android:contentDescription="@string/backspace"
+                android:src="@drawable/ic_outline_backspace_24"
+                android:tooltipText="Backspace" />
+
+            <Button
+                android:id="@+id/btDivide"
+                style="@style/EndButtonStyle"
+                android:text="@string/divide" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/bt7"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_7" />
+
+            <Button
+                android:id="@+id/bt8"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_8" />
+
+            <Button
+                android:id="@+id/bt9"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_9" />
+
+            <Button
+                android:id="@+id/btMultiply"
+                style="@style/EndButtonStyle"
+                android:text="@string/multiply" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/bt4"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_4" />
+
+            <Button
+                android:id="@+id/bt5"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_5" />
+
+            <Button
+                android:id="@+id/bt6"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_6" />
+
+            <Button
+                android:id="@+id/btMinus"
+                style="@style/EndButtonStyle"
+                android:text="@string/minus" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/bt1"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_1" />
+
+            <Button
+                android:id="@+id/bt2"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_2" />
+
+            <Button
+                android:id="@+id/bt3"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_3" />
+
+            <Button
+                android:id="@+id/btPlus"
+                style="@style/EndButtonStyle"
+                android:text="@string/plus" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/btDouble0"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_00" />
+
+            <Button
+                android:id="@+id/bt0"
+                style="@style/CommonButtonStyle"
+                android:text="@string/_0" />
+
+            <Button
+                android:id="@+id/btDot"
+                style="@style/CommonButtonStyle"
+                android:text="@string/dot" />
+
+            <Button
+                android:id="@+id/btEqual"
+                style="@style/EndButtonStyle"
+                android:text="@string/equal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
